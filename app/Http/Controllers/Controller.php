@@ -7,9 +7,9 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
-use App\Models\Lang;
 use Illuminate\Support\Facades\Auth;
-use App\Models\AdminUserActionPermision;
+use App\Models\Lang;
+
 use View;
 
 class Controller extends BaseController
