@@ -1,0 +1,13 @@
+[12-Mar-2019 19:00:25 UTC] PHP Fatal error:  Cannot declare class App\Model because the name is already in use in /home/publicitate/public_html/soledy/app/MainModel.php on line 6
+[12-Mar-2019 19:00:40 UTC] PHP Fatal error:  Class 'App\MainModel' not found in /home/publicitate/public_html/soledy/app/Models/Page.php on line 8
+[12-Mar-2019 19:01:44 UTC] PHP Fatal error:  Class 'App\MainModel' not found in /home/publicitate/public_html/soledy/app/Models/Page.php on line 8
+[12-Mar-2019 19:03:03 UTC] PHP Fatal error:  Class 'App\Models\Base' not found in /home/publicitate/public_html/soledy/app/Models/Page.php on line 7
+[12-Mar-2019 19:04:07 UTC] PHP Fatal error:  Cannot use App\Base as Model because the name is already in use in /home/publicitate/public_html/soledy/app/Models/Page.php on line 6
+[14-Mar-2019 15:33:26 UTC] PHP Warning:  require_once(../storage/framework/cache/cache.php): failed to open stream: No such file or directory in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:33:26 UTC] PHP Fatal error:  require_once(): Failed opening required '../storage/framework/cache/cache.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:33:28 UTC] PHP Warning:  require_once(../storage/framework/cache/cache.php): failed to open stream: No such file or directory in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:33:28 UTC] PHP Fatal error:  require_once(): Failed opening required '../storage/framework/cache/cache.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:36:00 UTC] PHP Warning:  require_once(../storage/framework/app/cache.php): failed to open stream: No such file or directory in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:36:00 UTC] PHP Fatal error:  require_once(): Failed opening required '../storage/framework/app/cache.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:36:21 UTC] PHP Warning:  require_once(../storage/app/cache.php): failed to open stream: No such file or directory in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43
+[14-Mar-2019 15:36:21 UTC] PHP Fatal error:  require_once(): Failed opening required '../storage/app/cache.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/publicitate/public_html/soledy/bootstrap/app.php on line 43

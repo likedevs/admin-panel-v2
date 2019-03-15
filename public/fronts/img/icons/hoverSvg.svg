@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>JA_1.2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="User-Logat" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page-2" transform="translate(-181.000000, -34.000000)" fill-rule="nonzero">
+            <g id="JA_1.2" transform="translate(181.000000, 34.000000)">
+                <polygon id="Shape" fill="#000000" points="11.5 0 15.0503356 7.24705882 23 8.41176471 17.2371365 14.0282353 18.6006711 22 11.5 18.2470588 4.39932886 22 5.73713647 14.0282353 0 8.41176471 7.94966443 7.24705882"></polygon>
+                <g id="Group" transform="translate(4.000000, 6.000000)" fill="#D9CEB4">
+                    <path d="M9.44363636,0.101818182 L4.88727273,9.85090909 L7.25454545,10.8690909 L7.78909091,9.49454545 L11.0981818,9.49454545 L11.6327273,10.8690909 L14,9.85090909 L9.44363636,0.101818182 Z M8.57818182,7.50909091 L9.44363636,5.29454545 L10.3090909,7.50909091 L8.57818182,7.50909091 Z" id="Shape"></path>
+                    <path d="M0.127272727,0.865454545 L0.407272727,2.82545455 L1.52727273,2.82545455 L1.52727273,8.98545455 C1.52727273,10.8181818 0.178181818,11.5818182 0.101818182,11.6072727 L1.32363636,13.8727273 C2.59636364,13.1854545 4.07272727,11.48 4.07272727,8.98545455 L4.07272727,0.84 L0.127272727,0.84 L0.127272727,0.865454545 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
