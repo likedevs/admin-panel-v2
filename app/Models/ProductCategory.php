@@ -24,6 +24,10 @@ class ProductCategory extends Model
         return $this->hasMany(SubProductProperty::class, 'product_category_id', 'id')->where('show_property', 1);
     }
 
+    public function property() {
+        return $this->hasOne(SubProductProperty::class, 'product_category_id', 'id')->where('show_property', 1);
+    }
+
     public function propertyMain() {
         return $this->hasOne(SubProductProperty::class, 'product_category_id', 'id')->where('show_property', 1)->where('image', 1);
     }

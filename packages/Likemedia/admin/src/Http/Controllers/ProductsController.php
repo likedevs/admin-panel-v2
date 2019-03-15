@@ -34,7 +34,6 @@ use App\Models\PropertyMultiData;
 use App\Models\SetProductImage;
 use App\Models\DeletedImages;
 
-
 class ProductsController extends Controller
 {
     /**
@@ -63,7 +62,7 @@ class ProductsController extends Controller
         $productCategory    = $request->get('category');
         $sets               = Set::all();
         $promotions         = Promotion::all();
-        $category           = ProductCategory::with('translation')->find($request->get('category'));
+        $category           = ProductCategory::with('properties')->find($request->get('category'));
         $poperties          = $this->getProperties($productCategory);
 
         return view('admin::admin.products.create', compact('categories', 'poperties', 'sets', 'category', 'promotions'));

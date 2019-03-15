@@ -35,8 +35,8 @@
                     <li>
                         <label>Categorie</label>
                         <select name="category_id">
-                        @foreach($categories as $category)
-                        <option value="{{ $category->id }}" {{ Request::get('category') == $category->id ? 'selected' : '' }}>{{ $category->translation($lang->id)->first()->name }}</option>
+                        @foreach($categories as $categoryOne)
+                        <option value="{{ $categoryOne->id }}" {{ Request::get('category') == $categoryOne->id ? 'selected' : '' }}>{{ $categoryOne->translation($lang->id)->first()->name }}</option>
                         @endforeach
                         </select>
                         @if (Request::get('category'))
@@ -129,7 +129,9 @@
         @endforeach
         @endif
         <div class="part left-part">
-            @include('admin::admin.products.parameters')
+            @if (!is_null($category))
+                @include('admin::admin.products.parameters',  ['category' => $category])
+            @endif
         </div>
         <div class="part left-part">
         <ul>

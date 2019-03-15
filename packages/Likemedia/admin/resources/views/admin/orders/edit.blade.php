@@ -164,8 +164,6 @@
 
                         <div class="infoAdr">
 
-                          <input type="hidden" name="addressCourier" value="">
-
                           @if (count($order->userLogged()->first()->addresses()->get()) > 0)
 
                             <div class="col-12">
@@ -479,5 +477,14 @@
 @section('footer')
 <footer>
     @include('admin::admin.footer')
+    <script type="text/javascript">
+      $('#order').on('submit', function(e){
+        e.preventDefault();
+
+        $('.addressInfo[data-id!='+ $('select[name="addressCourier"]').val() +']').remove();
+
+        this.submit();
+      });
+    </script>
 </footer>
 @stop

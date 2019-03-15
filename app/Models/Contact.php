@@ -21,6 +21,6 @@ class Contact extends Model
 
     public function translationByLanguage($lang = 1)
     {
-        return $this->hasOne(ContactTranslation::class)->where('lang_id', $lang)->first();
+        return $this->hasMany(ContactTranslation::class)->where('lang_id', $lang);
     }
 }

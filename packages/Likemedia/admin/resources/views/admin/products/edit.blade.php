@@ -171,7 +171,7 @@
         @endforeach
         @endif
         <div class="part left-part">
-            @include('admin::admin.products.parameters')
+            @include('admin::admin.products.parameters', ['category' => $product->category])
             <ul>
                 <li>
                     <label>Alias</label>
