@@ -96,15 +96,11 @@ class ProductCategoryController extends Controller
             $product_image_size = json_decode(file_get_contents(storage_path('globalsettings.json')), true)['crop']['product'];
 
             $image_resize->save(public_path('images/categories/og/' .$name_image), 75);
-            $image_resize->resize(672, 480)->save('images/categories/bg/' .$name_image, 75);
-            $image_resize->resize(672, 480)->save('images/categories/md/' .$name_image, 75);
             $image_resize->resize(672, 480)->save('images/categories/sm/' .$name_image, 85);
 
             if ($productCategory->image) {
-                @unlink(public_path('images/categories/bg/'.$productCategory->image));
                 @unlink(public_path('images/categories/og/'.$productCategory->image));
                 @unlink(public_path('images/categories/sm/'.$productCategory->image));
-                @unlink(public_path('images/categories/md/'.$productCategory->image));
             }
         }
 
@@ -115,15 +111,11 @@ class ProductCategoryController extends Controller
             $product_image_size = json_decode(file_get_contents(storage_path('globalsettings.json')), true)['crop']['product'];
 
             $image_resize->save(public_path('images/categories/og/' .$name_image_mob), 75);
-            $image_resize->resize(672, 480)->save('images/categories/bg/' .$name_image_mob, 75);
-            $image_resize->resize(672, 480)->save('images/categories/md/' .$name_image_mob, 75);
             $image_resize->resize(672, 480)->save('images/categories/sm/' .$name_image_mob, 85);
 
             if ($productCategory->image_mob) {
-                @unlink(public_path('images/categories/bg/'.$productCategory->image_mob));
                 @unlink(public_path('images/categories/og/'.$productCategory->image_mob));
                 @unlink(public_path('images/categories/sm/'.$productCategory->image_mob));
-                @unlink(public_path('images/categories/md/'.$productCategory->image_mob));
             }
         }
 
@@ -380,10 +372,6 @@ class ProductCategoryController extends Controller
         $product_image_size = json_decode(file_get_contents(storage_path('globalsettings.json')), true)['crop']['product'];
 
         $image_resize->save(public_path('images/categories/og/' .$name), 75);
-
-        $image_resize->resize($product_image_size[0]['bgfrom'], $product_image_size[0]['bgto'])->save('images/categories/bg/' .$name, 75);
-
-        $image_resize->resize($product_image_size[1]['mdfrom'], $product_image_size[1]['mdto'])->save('images/categories/md/' .$name, 75);
 
         $image_resize->resize($product_image_size[2]['smfrom'], $product_image_size[2]['smto'])->save('images/categories/sm/' .$name, 85);
 

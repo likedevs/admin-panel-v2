@@ -448,8 +448,6 @@ class ProductsController extends Controller
                             'src' => $productImage->src
                         ]);
                         $ogFile = copy(public_path('images/products/og/' .$productImage->src), public_path('images/sets/og/' .$productImage->src));
-                        $bgFile = copy(public_path('images/products/bg/' .$productImage->src), public_path('images/sets/bg/' .$productImage->src));
-                        $mdFile = copy(public_path('images/products/md/' .$productImage->src), public_path('images/sets/md/' .$productImage->src));
                         $smFile = copy(public_path('images/products/sm/' .$productImage->src), public_path('images/sets/sm/' .$productImage->src));
                     }
                 }
@@ -561,10 +559,6 @@ class ProductsController extends Controller
 
                 $image_resize->save(public_path('images/products/og/' .$name), 75);
 
-                $image_resize->resize($product_image_size[0]['bgfrom'], $product_image_size[0]['bgto'])->save('images/products/bg/' .$name, 75);
-
-                $image_resize->resize($product_image_size[1]['mdfrom'], $product_image_size[1]['mdto'])->save('images/products/md/' .$name, 75);
-
                 $image_resize->resize($product_image_size[2]['smfrom'], $product_image_size[2]['smto'])->save('images/products/sm/' .$name, 85);
 
                 $checkImage = SetProductImage::where('set_id', $key)->where('product_id', $product)->first();
@@ -605,10 +599,6 @@ class ProductsController extends Controller
                $product_image_size = json_decode(file_get_contents(storage_path('globalsettings.json')), true)['crop']['product'];
 
                $image_resize->save(public_path('images/products/og/' .$name), 75);
-
-               $image_resize->resize($product_image_size[0]['bgfrom'], $product_image_size[0]['bgto'])->save('images/products/bg/' .$name, 75);
-
-               $image_resize->resize($product_image_size[1]['mdfrom'], $product_image_size[1]['mdto'])->save('images/products/md/' .$name, 75);
 
                $image_resize->resize($product_image_size[2]['smfrom'], $product_image_size[2]['smto'])->save('images/products/sm/' .$name, 85);
 
@@ -735,10 +725,6 @@ class ProductsController extends Controller
 
                $image_resize->save(public_path('images/subproducts/og/' .$imageName), 75);
 
-               $image_resize->resize($product_image_size[0]['bgfrom'], $product_image_size[0]['bgto'])->save('images/subproducts/bg/' .$imageName, 75);
-
-               $image_resize->resize($product_image_size[1]['mdfrom'], $product_image_size[1]['mdto'])->save('images/subproducts/md/' .$imageName, 75);
-
                $image_resize->resize($product_image_size[2]['smfrom'], $product_image_size[2]['smto'])->save('images/subproducts/sm/' .$imageName, 85);
 
                $image = ProductImage::create( [
@@ -794,14 +780,8 @@ class ProductsController extends Controller
 
         // if (count($allImages) > 0) {
         //     foreach ($allImages as $key => $image) {
-        //         if (file_exists(public_path('images/subproducts/bg/'.$image->src))) {
-        //             unlink(public_path('images/subproducts/bg/'.$image->src));
-        //         }
         //         if (file_exists(public_path('images/subproducts/og/'.$image->src))) {
         //             unlink(public_path('images/subproducts/og/'.$image->src));
-        //         }
-        //         if (file_exists(public_path('images/subproducts/md/'.$image->src))) {
-        //             unlink(public_path('images/subproducts/md/'.$image->src));
         //         }
         //         if (file_exists(public_path('images/subproducts/sm/'.$image->src))) {
         //             unlink(public_path('images/subproducts/sm/'.$image->src));
@@ -1019,19 +999,9 @@ class ProductsController extends Controller
             ProductImage::where('product_id', $request->get('productId'))->where('id', $request->get('id'))->delete();
             $images = ProductImageTranslation::where('product_image_id', $request->get('id'))->get();
 
-            $file = file_exists(public_path('images/products/bg/'.$image->src));
-            if ($file) {
-                unlink(public_path('images/products/bg/'.$image->src));
-            }
-
             $file = file_exists(public_path('images/products/og/'.$image->src));
             if ($file) {
                 unlink(public_path('images/products/og/'.$image->src));
-            }
-
-            $file = file_exists(public_path('images/products/md/'.$image->src));
-            if ($file) {
-                unlink(public_path('images/products/md/'.$image->src));
             }
 
             $file = file_exists(public_path('images/products/sm/'.$image->src));
@@ -1078,14 +1048,8 @@ class ProductsController extends Controller
                   ProductImage::where('id', $image->id)->delete();
                   ProductImageTranslation::where('product_image_id', $image->id)->delete();
 
-                  if (file_exists(public_path('images/products/bg/'.$image->src))) {
-                      unlink(public_path('images/products/bg/'.$image->src));
-                  }
                   if (file_exists(public_path('images/products/og/'.$image->src))) {
                       unlink(public_path('images/products/og/'.$image->src));
-                  }
-                  if (file_exists(public_path('images/products/md/'.$image->src))) {
-                      unlink(public_path('images/products/md/'.$image->src));
                   }
                   if (file_exists(public_path('images/products/sm/'.$image->src))) {
                       unlink(public_path('images/products/sm/'.$image->src));

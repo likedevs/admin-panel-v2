@@ -37,33 +37,6 @@ class FrontUserController extends Controller
     return view('admin::admin.frontusers.create', compact('countries'));
   }
 
-  public function filterByCountries(Request $request)
-  {
-      $locationItems = Region::where('location_country_id', $request->get('value'))->get();
-
-      if(!empty($request->get('address_id'))) {
-          $address = FrontUserAddress::find($request->get('address_id'));
-          $data['regions'] = view('admin::admin.frontusers.options', compact('locationItems', 'address'))->render();
-      } else {
-          $data['regions'] = view('admin::admin.frontusers.options', compact('locationItems'))->render();
-      }
-
-      return json_encode($data);
-  }
-
-  public function filterByRegions(Request $request) {
-      $locationItems = City::where('location_region_id', $request->get('value'))->get();
-
-      if(!empty($request->get('address_id'))) {
-          $address = FrontUserAddress::find($request->get('address_id'));
-          $data['cities'] = view('admin::admin.frontusers.options', compact('locationItems', 'address'))->render();
-      } else {
-          $data['cities'] = view('admin::admin.frontusers.options', compact('locationItems'))->render();
-      }
-
-      return json_encode($data);
-  }
-
   public function store(Request $request)
   {
     $toValidate = [];

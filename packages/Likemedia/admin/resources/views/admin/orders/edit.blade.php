@@ -23,7 +23,6 @@
 @include('admin::admin.alerts')
 
 <div class="list-content">
-    <h3 href="{{ route('cart') }}">{{trans('front.cart.cart')}}</h3>
     <input type="text" placeholder="{{trans('front.cart.cod')}}: 0524026" value="" data-id="{{$order->id}}" class="form-control artProdus" style="max-width: 50%">
     <a href="javascript:void(0)" class="searchProductByCode">
       <div class="main-button">{{trans('front.cart.addToCart')}}</div>

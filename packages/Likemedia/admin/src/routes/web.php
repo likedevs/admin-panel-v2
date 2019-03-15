@@ -50,24 +50,12 @@ Route::group(['middleware' => ['web']], function ()
 
         Route::resource('submodules', 'SubModulesController');
 
-        Route::resource('/forms', 'FormsController');
-
         Route::resource('/categories', 'CategoriesController');
         Route::post('/categories/move/posts', 'CategoriesController@movePosts')->name('categories.move.posts');
         Route::post('/categories/change', 'CategoriesController@change')->name('categories.change');
         Route::post('/categories/part', 'CategoriesController@partialSave')->name('categories.partial.save');
         Route::post('/categories/move/posts_', 'CategoriesController@movePosts_')->name('categories.move.posts_');
         Route::post('/categories/part', 'CategoriesController@partialSave')->name('categories.partial.save');
-
-        Route::resource('/menus', 'MenusController');
-        Route::post('/menus/move/posts', 'MenusController@movePosts')->name('menus.move.posts');
-        Route::post('/menus/change', 'MenusController@change')->name('menus.change');
-        Route::post('/menus/part', 'MenusController@partialSave')->name('menus.partial.save');
-        Route::post('/menus/move/posts_', 'MenusController@movePosts_')->name('menus.move.posts_');
-        Route::post('/menus/part', 'MenusController@partialSave')->name('menus.partial.save');
-        Route::post('/menus/categories/assignment', 'MenusController@assignmentCategory')->name('menus.assignment.category');
-        Route::get('/menus/items/clean', 'MenusController@cleanMenus')->name('menus.clean');
-        Route::get('/menus/group/{id}', 'MenusController@getMenuByGroup')->name('menus.group');
 
         Route::resource('/product-categories', 'ProductCategoryController');
         Route::post('/product-categories/move/posts', 'ProductCategoryController@movePosts')->name('product-categories.move.posts');
@@ -81,8 +69,6 @@ Route::group(['middleware' => ['web']], function ()
 
         // Menu groups
         Route::resource('/groups', 'MenuGroupsController');
-
-        Route::resource('/tags', 'TagsController');
 
         Route::resource('/properties', 'ProductPropertiesController');
         Route::post('/properties/makeFilter/{id}', 'ProductPropertiesController@makeFilter')->name('properties.makeFilter');
@@ -123,9 +109,6 @@ Route::group(['middleware' => ['web']], function ()
         Route::resource('/autoalt', 'AutoAltController');
 
         Route::post('/autoalt/exportCategories', 'AutoAltController@exportCategories')->name('autoalt.exportCategories');
-
-        Route::resource('/review', 'ReviewController');
-        Route::patch('/review/{id}/change-status', 'ReviewController@changeStatus')->name('review.change.status');
 
         Route::resource('/subproducts', 'SubProductsController');
         Route::post('/subproducts/filterProperties', 'SubProductsController@filterProperties');

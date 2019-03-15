@@ -14,15 +14,11 @@
   </li>
   <li>
     <label for="region">Region</label>
-    <select name="region" class="name filterRegions" data-id="0" id="region">
-        <option disabled selected>Выберите регион</option>
-    </select>
+    <input type="text" name="region" class="name" id="region" value="{{old('region')}}">
   </li>
   <li>
     <label for="location">Location</label>
-    <select name="location" class="name filterCities" data-id="0" id="location">
-        <option disabled selected>Выберите город</option>
-    </select>
+    <input type="text" name="location" class="name" id="location" value="{{old('location')}}">
   </li>
   <li>
       <label for="address">Address</label>

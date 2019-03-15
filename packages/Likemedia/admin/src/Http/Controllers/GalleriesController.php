@@ -51,10 +51,6 @@ class GalleriesController extends Controller
 
                 $image_resize->save(public_path('images/galleries/og/' .$name), 75);
 
-                $image_resize->resize($gallery_image_size[0]['bgfrom'], $gallery_image_size[0]['bgto'])->save(public_path('images/galleries/bg/' .$name), 75);
-
-                $image_resize->resize($gallery_image_size[1]['mdfrom'], $gallery_image_size[1]['mdto'])->save(public_path('images/galleries/md/' .$name), 75);
-
                 $image_resize->resize($gallery_image_size[2]['smfrom'], $gallery_image_size[2]['smto'])->save(public_path('images/galleries/sm/' .$name), 85);
 
                 $images[] = $name;
@@ -135,10 +131,6 @@ class GalleriesController extends Controller
 
                 $image_resize->save(public_path('images/galleries/og/' .$name), 75);
 
-                $image_resize->resize($gallery_image_size[0]['bgfrom'], $gallery_image_size[0]['bgto'])->save(public_path('images/galleries/bg/' .$name), 75);
-
-                $image_resize->resize($gallery_image_size[1]['mdfrom'], $gallery_image_size[1]['mdto'])->save(public_path('images/galleries/md/' .$name), 75);
-
                 $image_resize->resize($gallery_image_size[2]['smfrom'], $gallery_image_size[2]['smto'])->save(public_path('images/galleries/sm/' .$name), 85);
 
                 $images[] = $name;
@@ -216,14 +208,8 @@ class GalleriesController extends Controller
                 GalleryImage::where('id', $image->id)->delete();
                 $imagesTrans = GalleryImageTranslation::where('gallery_image_id', $image->id)->delete();
 
-                if (file_exists('/images/galleries/bg/'.$image->src)) {
-                    unlink('/images/galleries/bg/'.$image->src);
-                }
                 if (file_exists('/images/galleries/og/'.$image->src)) {
                     unlink('/images/galleries/og/'.$image->src);
-                }
-                if (file_exists('/images/galleries/md/'.$image->src)) {
-                    unlink('/images/galleries/md/'.$image->src);
                 }
                 if (file_exists('/images/galleries/sm/'.$image->src)) {
                     unlink('/images/galleries/sm/'.$image->src);
@@ -243,14 +229,8 @@ class GalleriesController extends Controller
         $images = GalleryImageTranslation::where('gallery_image_id', $request->get('id'))->get();
 
         if (!is_null($images)) {
-            if (file_exists('/images/galleries/bg/'.$image->src)) {
-                unlink('/images/galleries/bg/'.$image->src);
-            }
             if (file_exists('/images/galleries/og/'.$image->src)) {
                 unlink('/images/galleries/og/'.$image->src);
-            }
-            if (file_exists('/images/galleries/md/'.$image->src)) {
-                unlink('/images/galleries/md/'.$image->src);
             }
             if (file_exists('/images/galleries/sm/'.$image->src)) {
                 unlink('/images/galleries/sm/'.$image->src);

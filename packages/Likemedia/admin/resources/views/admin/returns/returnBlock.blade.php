@@ -136,7 +136,6 @@
 
                 @include('admin::admin.returns.address')
 
-
               </div>
 
               <div class="tab-content {{$pickup}}-content" id="pickup">
