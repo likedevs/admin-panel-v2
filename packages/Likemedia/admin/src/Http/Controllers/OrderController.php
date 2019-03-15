@@ -94,7 +94,8 @@ class OrderController extends Controller
             }
         }
 
-        $cartProducts = Cart::where('user_id', $request->get('user_id'))->get();
+        $cartProducts = $this->getCartProducts($request->get('front_user_id'));
+        $cartSets = $this->getCartSets($request->get('front_user_id'));
 
         $countries = UserField::where('field', 'countries')->first();
 
@@ -110,7 +111,7 @@ class OrderController extends Controller
         }
 
         $data['userinfo'] = view('admin::admin.orders.orderBlock', compact('frontuser', 'address', 'countries', 'regions', 'cities'))->render();
-        $data['cartProducts'] = view('admin::admin.orders.cartBlockCreate', compact('cartProducts'))->render();
+        $data['cartProducts'] = view('admin::admin.orders.cartBlockCreate', compact('cartProducts', 'cartSets'))->render();
 
         return json_encode($data);
     }

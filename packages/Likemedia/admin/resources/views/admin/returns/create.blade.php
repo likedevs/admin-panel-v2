@@ -81,5 +81,15 @@
 @section('footer')
 <footer>
     @include('admin::admin.footer')
+
+    <script type="text/javascript">
+      $('#order').on('submit', function(e){
+        e.preventDefault();
+
+        $('.addressInfo[data-id!='+ $('select[name="addressCourier"]').val() +']').remove();
+
+        this.submit();
+      });
+    </script>
 </footer>
 @stop

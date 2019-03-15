@@ -105,8 +105,44 @@
 
               <div class="tab-content active-content" id="courier">
 
-                @include('admin::admin.orders.editAddress')
+                @if (count($frontuser->addresses()->get()) > 0)
 
+                  <div class="col-12">
+
+                    <div class="slideAdress">
+
+                      <input type="hidden" name="addressCourier" value="">
+
+
+                      <select class="form-control" name="addressCourier">
+
+                        @foreach ($frontuser->addresses()->get() as $key => $address)
+
+                            <option value="{{$address->id}}">{{$address->addressname}}</option>
+
+                        @endforeach
+
+                      </select>
+
+                      <br>
+
+                      @foreach ($frontuser->addresses()->get() as $key => $address)
+
+                        <div class="addressInfo" data-id="{{$address->id}}">
+
+                          @include('admin::admin.orders.editAddress')
+
+                        </div>
+
+                      @endforeach
+
+                    </div>
+
+                  </div>
+
+                @else
+                  @include('admin::admin.orders.editAddress')
+                @endif
               </div>
 
               <div class="tab-content" id="pickup">

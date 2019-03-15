@@ -2,16 +2,15 @@
 
 namespace Admin\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\ProductCategory;
 use App\Models\ProductCategoryTranslate;
 use App\Models\Product;
 use App\Models\PropertyGroup;
 use App\Models\PropertyCategory;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
-use Intervention\Image\ImageManagerStatic as Image;
-
 
 class ProductCategoryController extends Controller
 {

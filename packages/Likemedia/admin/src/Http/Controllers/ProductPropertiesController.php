@@ -364,6 +364,8 @@ class ProductPropertiesController extends Controller
                         }
                         $countItems[] = $multidata->id;
                     }else{
+                        // dd($request->get('case_ro')[$key]);
+
                         $countItems[] = $key;
                         $multidata = PropertyMultiData::where('id', $multidataExists->id)->update([
                             'property_id' => $property->id,
