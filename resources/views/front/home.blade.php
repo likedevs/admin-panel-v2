@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="text-center">Soledy home page</h1>
+<h1 class="text-center">admin default home page</h1>
 
 <?php
     $phone = !is_null(getContactInfo('phone')->translation($lang->id)) ? getContactInfo('phone')->translation($lang->id)->value : '';
