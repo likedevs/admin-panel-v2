@@ -22,7 +22,7 @@ class PropertyMultiData extends Model
 
     public function translationByLanguage($lang = 1)
     {
-        return $this->hasMany(PropertyMultiDataTranslation::class, 'property_multidata_id')->where('lang_id', $lang);
+        return $this->hasOne(PropertyMultiDataTranslation::class, 'property_multidata_id')->where('lang_id', $lang);
     }
 
     public function subProduct($productId, $paramValue)
